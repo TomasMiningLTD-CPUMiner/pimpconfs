@@ -1,0 +1,27 @@
+# ==================================================================
+#       .__
+#______ |__| _____ ______  Portable Instant Mining Platform
+#\____ \|  |/     \____  \            PiMP Classic!
+#|  |_> >  |  Y Y  \  |_> >
+#|   __/|__|__|_|  /   __/   Support: #PiMP on FreenodeIRC
+#|__|            \/|__|           https://getPiMP.org
+#
+#
+# Copyright (c) 2016 getPiMP.org.  All Rights Reserved.
+# License: This code is licensed for use with getPiMP.org only.
+# Description: PIMP CLI miner module config
+# ==================================================================
+# Mine Monero using your CPU the easiest way:
+NAME=Monero XMR CPU
+POOL1=stratum+tcp://mine.moneropool.com:3333
+USER1=4AkxPmLWKtyQ7hagDJ3CMRevKUvtDpe8XcABaJRYfXvLHCWFtyChdxhMNXuhEpp6aPXgg7AEpFSRCEAHqNhkBuP66qqVNP1
+PASS1=x
+ALGO1=cryptonight
+#
+## modification below here is unadvised
+TYPE=CPU
+DIR=cpuminer-multi
+BINARY=cpuminer
+CONF=p1:o,u1:u,l1:p,a1:a
+API=-api-bind 127.0.0.1:
+FLAGS=--api-remote

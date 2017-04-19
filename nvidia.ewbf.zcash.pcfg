@@ -1,0 +1,29 @@
+# ==================================================================
+#       .__
+#______ |__| _____ ______  Portable Instant Mining Platform
+#\____ \|  |/     \____  \            PiMP Classic!
+#|  |_> >  |  Y Y  \  |_> >
+#|   __/|__|__|_|  /   __/   Support: #PiMP on FreenodeIRC
+#|__|            \/|__|           https://getPiMP.org
+#
+#
+# Copyright (c) 2016 getPiMP.org.  All Rights Reserved.
+# License: This code is licensed for use with getPiMP.org only.
+# Description: PIMP CLI miner module config
+# ==================================================================
+# Mine Zcash using NVIDIA:
+NAME=NVIDIA EWBF Zcash miner
+ALGO1=Equihash
+#
+#
+POOL1=us-east01.miningrigrentals.com
+USER1=pimp.34579
+PASS1=x
+#
+## modification below here is unadvised
+TYPE=GPU
+DIR=nvidia-ewbf-zcash
+BINARY=ewbfminer
+CONF=p1:-server,u1:-user,l1:-pass,
+API=
+FLAGS=--port 3333 --eexit 1 --log 2

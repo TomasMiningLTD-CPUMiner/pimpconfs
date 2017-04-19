@@ -1,0 +1,27 @@
+# ==================================================================
+#       .__
+#______ |__| _____ ______  Portable Instant Mining Platform
+#\____ \|  |/     \____  \            PiMP Classic!
+#|  |_> >  |  Y Y  \  |_> >
+#|   __/|__|__|_|  /   __/   Support: #PiMP on FreenodeIRC
+#|__|            \/|__|           https://getPiMP.org
+#
+#
+# Copyright (c) 2016 getPiMP.org.  All Rights Reserved.
+# License: This code is licensed for use with getPiMP.org only.
+# Description: PIMP CLI miner module config
+# ==================================================================
+NAME=ZCash CPU
+# User variables
+POOL1=equihash.usa.nicehash.com:3357
+USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
+PASS1=
+ALGO1=
+#
+## modification below here is unadvised
+TYPE=CPU
+DIR=nheqminer
+BINARY=Linux_cmake/nheqminer_cpu/nheqminer_cpu
+CONF=p1:l,u1:u
+API=
+FLAGS=

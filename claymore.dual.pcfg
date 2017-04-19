@@ -1,0 +1,43 @@
+# ==================================================================
+#       .__
+#______ |__| _____ ______  Portable Instant Mining Platform
+#\____ \|  |/     \____  \            PiMP Classic!
+#|  |_> >  |  Y Y  \  |_> >
+#|   __/|__|__|_|  /   __/   Support: #PiMP on FreenodeIRC
+#|__|            \/|__|           https://getPiMP.org
+#
+#
+# Copyright (c) 2016 getPiMP.org.  All Rights Reserved.
+# License: This code is licensed for use with getPiMP.org only.
+# Description: PIMP CLI miner module config
+# ==================================================================
+NAME=Claymore Dual
+# Dual mine ETH and DECRED using Claymore's FEE Miner
+# *** NOTE: CLAYMORE TAKES A % of your hash from using this miner!!
+#
+# DISCLAIMER: DUAL MINING IS VERY DANGEROUS!!! 
+# PLEASE TAKE PRECAUTIONS AND TEST THOROUGHLY 
+# SO YOU DO NOT BURN OR DAMAGE YOUR HARDWARE!!!
+# PIMP ASSUMES NO LIABILITY FOR ANY DAMAGES CAUSED BY MINING.
+#
+
+# Eth
+POOL1=stratum+tcp://us1.ethermine.org:4444
+USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa
+PASS1=x
+ALGO1=Ethereum
+
+# Decred
+POOL2=stratum+tcp://decred.mine.zpool.ca:5744
+USER2=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
+PASS2=x
+ALGO2=Decred
+
+#
+## modification below here is unadvised
+TYPE=GPU
+DIR=claymore-dual
+BINARY=ethdcrminer64
+CONF=p1:epool,u1:ewal,l1:epsw,p2:dpool,u2:dwal,l2:dpsw
+API=mport
+FLAGS=

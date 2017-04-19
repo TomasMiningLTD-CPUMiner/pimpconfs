@@ -1,0 +1,27 @@
+# =================================================================
+#       .__
+#______ |__| _____ ______  Portable Instant Mining Platform
+#\____ \|  |/     \____  \            PiMP Classic!
+#|  |_> >  |  Y Y  \  |_> >
+#|   __/|__|__|_|  /   __/   Support: #PiMP on FreenodeIRC
+#|__|            \/|__|           https://getPiMP.org
+#
+#
+# Copyright (c) 2016 getPiMP.org.  All Rights Reserved.
+# License: This code is licensed for use with getPiMP.org only.
+# Description: PIMP CLI miner module config
+# ==================================================================
+# Mine DECRED using NVIDIA:
+NAME=CCMiner Multi
+POOL1=stratum+tcp://decred.mine.zpool.ca:5744
+USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
+PASS1=x
+ALGO1=decred
+#
+## modification below here is unadvised
+TYPE=GPU
+DIR=ccminer
+BINARY=ccminer
+CONF=p1:o,u1:u,l1:p,a1:a
+API=b
+FLAGS=--api-remote

@@ -1,0 +1,38 @@
+# ==================================================================
+#       .__
+#______ |__| _____ ______  Portable Instant Mining Platform
+#\____ \|  |/     \____  \            PiMP Classic!
+#|  |_> >  |  Y Y  \  |_> >
+#|   __/|__|__|_|  /   __/   Support: #PiMP on FreenodeIRC
+#|__|            \/|__|           https://getPiMP.org
+#
+#
+# Copyright (c) 2016 getPiMP.org.  All Rights Reserved.
+# License: This code is licensed for use with getPiMP.org only.
+# Description: PIMP CLI miner module config
+# ==================================================================
+NAME=ZCash Opti
+ALGO1=Equihash
+#
+POOL1=eu1-zcash.flypool.org:3333
+USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.pimp
+PASS1=x
+
+# Nicehash, uses bitcoin address as user
+#POOL1=equihash.usa.nicehash.com:3357
+#USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
+#PASS1=x
+
+# suprnova.cc
+#POOL1=zec.suprnova.cc:2142
+#USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.pimp
+#PASS1=x
+
+#
+## modification below here is unadvised
+TYPE=GPU
+DIR=optiminer-zcash
+BINARY=optiminer-zcash
+CONF=p1:s,u1:u,l1:p
+API=
+FLAGS=
