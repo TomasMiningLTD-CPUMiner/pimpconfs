@@ -13,6 +13,10 @@
 # ==================================================================
 # Mine Monero using your CPU the easiest way:
 NAME=Monero XMR CPU
+#
+# To Mine XMR to your XMR wallet using moneropool,
+# Just put your wallet address in below.
+# 
 POOL1=stratum+tcp://mine.moneropool.com:3333
 USER1=4AkxPmLWKtyQ7hagDJ3CMRevKUvtDpe8XcABaJRYfXvLHCWFtyChdxhMNXuhEpp6aPXgg7AEpFSRCEAHqNhkBuP66qqVNP1
 PASS1=x
@@ -24,4 +28,7 @@ DIR=cpuminer-multi
 BINARY=cpuminer
 CONF=p1:o,u1:u,l1:p,a1:a
 API=-api-bind 127.0.0.1:
+#
+# You can set optional parameters here. We suggest leaving --api-remote in so you can control your miner.
+#
 FLAGS=--api-remote

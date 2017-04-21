@@ -16,18 +16,19 @@ ALGO1=Equihash
 # Mine Zcash using Claymore's FEE Miner
 # *** NOTE: CLAYMORE TAKES A % of your hash from using this miner!!
 
-# Zcash AMD Miner
+# Put your Zcash Pool information here. Default uses zcash t-address [dot] workername.
 POOL1=eu1-zcash.flypool.org:3333
 USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.pimp
 PASS1=x
 
-# Nicehash, uses bitcoin address as user
+# OR, to use Nicehash, put your BITCOIN address dot workername here,
+# then comment out the section above and uncomment this section.
 # Note: Using Nicehash SSL port reduces Claymore dev fee.
 #POOL1=stratum+ssl://equihash.eu.nicehash.com:33357
 #USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
 #PASS1=x
 
-# suprnova.cc
+# suprnova.cc another pool example
 #POOL1=zec.suprnova.cc:2142
 #USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.pimp
 #PASS1=x
@@ -39,4 +40,8 @@ DIR=claymore-zcash-amd
 BINARY=zecminer64
 CONF=p1:zpool,u1:zwal,l1:zpsw
 API=mport
+#
+# Here is where you can add command line parameters such as intensity and mining modes.
+# Example is to not reset, try to keep the GPUs at 80C, and stop mining if they reach 95C.
+#
 FLAGS=-r 0 -tt 80 -tstop 95

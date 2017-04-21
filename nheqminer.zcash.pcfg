@@ -12,7 +12,11 @@
 # Description: PIMP CLI miner module config
 # ==================================================================
 NAME=ZCash CPU
-# User variables
+#
+# Nicehash Zcash CPU miner
+# 
+# Uses BTC address DOT workername as your username
+# 
 POOL1=equihash.usa.nicehash.com:3357
 USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
 PASS1=
@@ -24,4 +28,7 @@ DIR=nheqminer
 BINARY=Linux_cmake/nheqminer_cpu/nheqminer_cpu
 CONF=p1:l,u1:u
 API=
+#
+# You can pass parameters to the miner using the FLAGS= field below. 
+#
 FLAGS=
