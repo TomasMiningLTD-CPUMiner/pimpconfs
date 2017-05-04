@@ -15,7 +15,8 @@
 # and mine to it with this miner. 
 # ==================================================================
 # Profile Description:
-# 
+#
+# Claymore's Dual miner is also a great way to mine ETH.  
 # Dual mine ETH and DECRED, PASCAL, SIA, OR LBRY at the same time using Claymore's FEE Miner
 # *** NOTE: CLAYMORE TAKES A % of your hash from using this miner!!
 #
@@ -59,6 +60,10 @@ ALGO2=Decred
 # You can change the intensity in runtime with "+" and "-" keys and check current statistics with "s" key.
 # For example, by default (-dcri 30) 390 card shows 29MH/s for Ethereum and 440MH/s for Decred. Setting -dcri 70 causes 24MH/s for Ethereum and 850MH/s for Decred.
 # Default is for temp target 75C and temp stop 90C.
+# -mode 0 = dual mining
+# -mode 1 = eth only
+# -dcri option tunes single/dual rate. For example mode 1 and -dcri 7 gives a nice ETH hashrate.
+
 FLAGS=-tt 75 -tstop 90
 
 # ==================================================================
