@@ -17,7 +17,6 @@
 # Profile Description:
 # 
 # Dual mine ETH and DECRED, PASCAL, SIA, OR LBRY at the same time using Claymore's FEE Miner
-#  
 # *** NOTE: CLAYMORE TAKES A % of your hash from using this miner!!
 #
 # DISCLAIMER: DUAL MINING IS VERY DANGEROUS!!! 
@@ -47,12 +46,12 @@ ALGO1=Ethereum
 POOL2=stratum+tcp://decred.mine.zpool.ca:5744
 USER2=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
 PASS2=x
-ALGO2=decred
+ALGO2=Decred
 
 #
 # Here is where you can add command line parameters such as intensity and mining modes.
-# For more details: https://bitcointalk.org/index.php?topic=1433925.0
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
+# For more details: https://bitcointalk.org/index.php?topic=1433925.0
 
 # MOST COMMON FLAGS USED BY PIMPS:
 # -dcri   Decred/Siacoin/Lbry/Pascal intensity, or Ethereum fine-tuning value in ETH ASM mode. Default value is 30, you can adjust this value to get the best Decred/Siacoin/Lbry mining speed without # reducing Ethereum mining speed. 
@@ -63,7 +62,7 @@ ALGO2=decred
 FLAGS=-tt 75 -tstop 90
 
 # ==================================================================
-## INTERNAL USE ONLY: modification below here is unadvised 
+# INTERNAL USE ONLY: modification below here is unadvised 
 TYPE=GPU
 DIR=claymore-dual
 BINARY=ethdcrminer64
