@@ -42,7 +42,36 @@ PASS1=x
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
 # We suggest leaving --log 2 in so you can control your miner and monitor it.
 # You have to define the pool's Stratum port here as well. 
-FLAGS=--port 3333 --eexit 1 --log 2
+FLAGS=--port 3333 --eexit 1 --log 2 --fee 0 --templimit 90 --tempunits C --pec
+
+
+# Here is the CLI --help information provided by the miner's author:
+# +-------------------------------------------------+
+# |         EWBF's Zcash CUDA miner. 0.3.3b         |
+# +-------------------------------------------------+
+# --help, -h          Show this help.
+# --server            Stratum server only hostname or ip address.
+# --port              Stratum server port.
+# --user              Stratum user.
+# --pass              Stratum password.
+# --fee               The developer fee in percent allowed decimals for example 0, 1, 2.5, 1.5 etc.
+# --pec               Power efficiency calculator. Shows power statistics.
+# --cuda_devices      Space-separated list of cuda devices.
+#                     Without this option all devices are used.
+# --solver            Disable benchmark and use specified solver
+#                     Allowed values from 0 to 3.
+# --eexit             Exit in case of error. Value 1 exit if miner cannot restart workers.
+#                     Value 2 if lost connection with the pool. 3 both cases.
+# --log               Create file miner.log in directory of miner.
+#                     Allowed values 1 and 2. 1 only errors, 2 will repeat console output.
+# --logfile           Set custom filename.
+# --tempunits         Temperature units, allowed values: C for celsius, F for fahrenheit and K for kelvin :)).
+# --templimit         Temperature limit, gpu will be stopped if this limit is reached.
+# --api               Enable api without an argument will be listen on 127.0.0.1:42000,
+#                     You can set listen address as an argument for example: --api 0.0.0.0:12345
+#                     Allowed ports 1000 - 65535
+# Example1: miner --server server.com --port 7777 --user name --pass secret --cuda_devices 0 1 2 3 --eexit 1
+# Example2: miner --server server.com --port 7777 --user name --pass secret --eexit 1 --log 2 --solver 1
 
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised
