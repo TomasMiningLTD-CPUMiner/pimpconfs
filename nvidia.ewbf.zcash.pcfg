@@ -79,4 +79,5 @@ TYPE=GPU
 DIR=nvidia-ewbf-zcash
 BINARY=ewbfminer
 CONF=p1:-server,u1:-user,l1:-pass,
-API=
+API=-api 127.0.0.1:
+
