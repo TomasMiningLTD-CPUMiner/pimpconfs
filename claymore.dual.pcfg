@@ -24,6 +24,7 @@
 # PLEASE TAKE PRECAUTIONS AND TEST THOROUGHLY 
 # SO YOU DO NOT BURN OR DAMAGE YOUR HARDWARE!!!
 # PIMP ASSUMES NO LIABILITY FOR ANY DAMAGES CAUSED BY MINING.
+
 # ==================================================================
 
 # NAME = This is the way the miner will appear in miner farm
@@ -43,7 +44,8 @@ ALGO1=Ethereum
 # POOL2 is in form stratum+tcp://url:port
 # USER2 is the username usually in form wallet.workername
 # PASS2 is usually x but can be used for parameters.
-# ALGO2 should be the Algo to mine: decred, lbry, sia, or pasc
+# ALGO2 should be the Algo to mine: decred, lbry, sia, or pasc  YOU ALSO MUST ADD PARAMETER BELOW:
+# In FLAGS= you would need to add:   -dcoin sc     in order to mine sia, for example. 
 POOL2=stratum+tcp://decred.mine.zpool.ca:5744
 USER2=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
 PASS2=x
@@ -60,11 +62,15 @@ ALGO2=Decred
 # You can change the intensity in runtime with "+" and "-" keys and check current statistics with "s" key.
 # For example, by default (-dcri 30) 390 card shows 29MH/s for Ethereum and 440MH/s for Decred. Setting -dcri 70 causes 24MH/s for Ethereum and 850MH/s for Decred.
 # Default is for temp target 75C and temp stop 90C.
+
+#WARNING: be careful if you use use separate overclock/temperature settings for every card, due to new # sorting method GPUs can get different indexes!
+
 # -mode 0 = dual mining
 # -mode 1 = eth only
 # -dcri option tunes single/dual rate. For example mode 1 and -dcri 7 gives a nice ETH hashrate.
-
-FLAGS=-tt 75 -tstop 90
+# To choose what coin you want use the -dcoin parameter.
+# TO CONTROL FANS USING THE OS / OC script, remove the tt and tshop params here! They override it.
+FLAGS=-tt 75 -tstop 90 -mode 1
 
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised 
