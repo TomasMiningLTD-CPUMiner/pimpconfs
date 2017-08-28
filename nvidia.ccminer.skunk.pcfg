@@ -42,7 +42,7 @@ ALGO1=skunk
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
 # We suggest leaving --api-remote in so you can control your miner and monitor it.
-FLAGS=--api-remote
+FLAGS=--api-remote --intensity 20
 
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised
@@ -51,4 +51,3 @@ DIR=ccminer-skunk
 BINARY=ccminer
 CONF=p1:o,u1:u,l1:p,a1:a
 API=b
-FLAGS=--api-remote
