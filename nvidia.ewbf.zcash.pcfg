@@ -29,19 +29,70 @@ NAME=NVIDIA EWBF Zcash miner
 ALGO1=Equihash
 #
 # POOL INFORMATION: Put your pool and wallet here.
-# POOL1 is in form url   (no stratum://. and the port is defined in the FLAGS)
-# USER1 is the username usually in form wallet.workername DEFAULT MoneroPool TAKES A XMR WALLET!
+# FOR EWBF MINER: 
+# POOL1 is in form url   (no stratum:// and the port is defined in the FLAGS)
+# Note: EWBF miner does not currently support SSL stratum ssl:// 
+# USER1 is the username usually in form wallet.workername 
 # NOTE: SOME EXCHANGES CANNOT BE MINED TO, like Bittrex.
-# PASS1 is usually x but can be used for parameters.
-# ALGO1 is the algorithm 
-POOL1=us-east01.miningrigrentals.com
-USER1=pimp.34579
-PASS1=x
+# PASS1 is usually x but can be used for parameters on some pools.
 
+# POOLS:
+# ---------------------------------------------------------------------
+# ZEC Mine-to-wallet pools:
+# These pools allow you to mine to direct wallet address.
+# Either put a ZEC wallet (starts with t), nicehash takes a BTC wallet,
+#  then put a dot and then your worker name if you like. 
+# Simply remove the # from the pool/user/pass that you want to use and put the #
+#  in front of every other pool.
+#
+# flypool (unencrypted connection): FLAGS=--port 3333
+   POOL1=eu1-zcash.flypool.org 
+   USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.PimpWorker
+   PASS1=x
+#
+# nanopool (unencrypted connection): FLAGS=--port 6666
+#   POOL1=zec-eu1.nanopool.org 
+#   USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.YourWorkerName
+#   PASS1=x
+#
+# nicehash (unencrypted connection): FLAGS=--port 3357
+#   POOL1=equihash.usa.nicehash.com
+#   USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir
+#   PASS1=x
+#
+# ---------------------------------------------------------------------
+# ZEC Mine-to-worker pools:
+# These pools require you to create an account and a worker to mine to:
+#
+# miningpoolhub (unencrypted connection):  FLAGS=--port 20570
+#   POOL1=us-east.equihash-hub.miningpoolhub.com 
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# suprnova (unencrypted connection): FLAGS=--port 2142
+#   POOL1=zec.suprnova.cc
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# coinmine (unencrypted connection): FLAGS=--port 7007
+#   POOL1=zec-us.coinmine.pl
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+# 
+# miningrigrentals (unencrypted connection):  FLAGS=--port 3333
+#   POOL1=us-east01.miningrigrentals.com
+#   USER1=pimp.34579
+#   PASS1=x
+# ---------------------------------------------------------------------
+
+# COMMAND LINE PARAMETERS:
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
 # We suggest leaving --log 2 in so you can control your miner and monitor it.
 # You have to define the pool's Stratum port here as well. 
+# IF YOU WANT TO MANAGE FANS WITH gputool YOU MUST REMOVE --templimit
+#  Reason: EWBF will override gputool. But we didn't want to lose the failsafe defaults.
+
 FLAGS=--port 3333 --eexit 1 --log 2 --fee 0 --templimit 90 --tempunits C --pec
 
 

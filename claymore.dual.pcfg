@@ -16,20 +16,18 @@
 # ==================================================================
 # Profile Description:
 #
-# Claymore's Dual miner is also a great way to mine ETH.  
-# Dual mine ETH and DECRED, PASCAL, SIA, OR LBRY at the same time using Claymore's FEE Miner
-# *** NOTE: CLAYMORE TAKES A % of your hash from using this miner!!
-#
+# Mine ETH and dual-mine ETH with DECRED, PASCAL, SIA, OR LBRY at the same time using Claymore's FEE Miner
+# NOTE: CLAYMORE TAKES A % of your hash from using this miner!!
 # DISCLAIMER: DUAL MINING IS VERY DANGEROUS!!! 
-# PLEASE TAKE PRECAUTIONS AND TEST THOROUGHLY 
-# SO YOU DO NOT BURN OR DAMAGE YOUR HARDWARE!!!
-# PIMP ASSUMES NO LIABILITY FOR ANY DAMAGES CAUSED BY MINING.
-
+#  PLEASE TAKE PRECAUTIONS AND TEST THOROUGHLY SO YOU DO NOT BURN OR DAMAGE
+#  YOUR HARDWARE. PIMP ASSUMES NO LIABILITY FOR ANY DAMAGES CAUSED BY MINING.
 # ==================================================================
 
 # NAME = This is the way the miner will appear in miner farm
 NAME=Claymore Dual
 
+# POOLS:
+# ---------------------------------------------------------------------
 # ETH POOL INFORMATION: Put your ETH pool and wallet here.
 # POOL1 is in form stratum+tcp://url:port
 # USER1 is the username usually in form wallet.workername
@@ -40,37 +38,64 @@ USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa
 PASS1=x
 ALGO1=Ethereum
 
-# Put your OTHER (DCR/LBRY/SIA/PASCAL) Pool/wallet here
-# POOL2 is in form stratum+tcp://url:port
-# USER2 is the username usually in form wallet.workername
-# PASS2 is usually x but can be used for parameters.
-# ALGO2 should be the Algo to mine: decred, lbry, sia, or pasc  YOU ALSO MUST ADD PARAMETER BELOW:
-# In FLAGS= you would need to add:   -dcoin sc     in order to mine sia, for example. 
-POOL2=stratum+tcp://decred.mine.zpool.ca:5744
-USER2=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
-PASS2=x
-ALGO2=Decred
-
+# DUAL MINING CONFIG: Not enabled by default. 
+# ---------------------------------------------------------------------
+# To Dual Mine:
 #
+# Step 1: Change 2 things in the FLAGS= below:
+#  Add  -mode 0  to enable dual mining.
+#  Add -dcoin dcr, -dcoin sc, -dcoin lbc, or -dcoin pasc
+#
+# Step 2: 
+#  Put your Second-Coin (DCR/LBRY/SIA/PASCAL) Pool/wallet info here
+# POOL2 is in form stratum+tcp://url:port
+# USER2 is the username usually in form wallet.workername or username.workername
+# PASS2 is usually x but can be used for parameters.
+# ALGO2 should be the name of the Algo to mine: decred, lbry, sia, or pasc
+#   The ALGO2 is required for proper stats in miner.farm.
+
+# EXAMPLE FOR SIA: (use FLAGS=-mode 0 -dcoin sc)
+#  POOL2=stratum+tcp://decred.mine.zpool.ca:5744
+#  USER2=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
+#  PASS2=x
+#  ALGO2=Sia
+
+# EXAMPLE FOR DECRED: (use FLAGS=-mode 0 -dcoin dcr)
+#  POOL2=stratum+tcp://decred.mine.zpool.ca:5744
+#  USER2=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
+#  PASS2=x
+#  ALGO2=Decred
+
+# EXAMPLE FOR LBRY: (use FLAGS=-mode 0 -dcoin lbc)
+#  POOL2=stratum+tcp://lbry.usa.nicehash.com:3356
+#  USER2=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
+#  PASS2=x
+#  ALGO2=Lbry
+
+# EXAMPLE FOR PASC: (use FLAGS=-mode 0 -dcoin pasc)
+#  POOL2=stratum+tcp://pasc.suprnova.cc:5279
+#  USER2=pimp.pimp
+#  PASS2=x
+#  ALGO2=Pasc
+
+# ---------------------------------------------------------------------
+# COMMAND LINE PARAMETERS:
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
-# For more details: https://bitcointalk.org/index.php?topic=1433925.0
+# Default is for temp target 75C and temp stop 90C.
+# IF YOU WANT TO MANAGE FANS WITH gputool YOU MUST REMOVE -tt 75 -tstop 90
+#  Reason: Claymore will override gputool. But we didn't want to lose the failsafe defaults.
+
+FLAGS=-tt 75 -tstop 90 -nofee 1
+
+# For all options read Claymore dual documentation: 
+#  https://bitcointalk.org/index.php?topic=1433925.0
 
 # MOST COMMON FLAGS USED BY PIMPS:
 # -dcri   Decred/Siacoin/Lbry/Pascal intensity, or Ethereum fine-tuning value in ETH ASM mode. Default value is 30, you can adjust this value to get the best Decred/Siacoin/Lbry mining speed without # reducing Ethereum mining speed. 
 # You can also specify values for every card, for example "-dcri 30,100,50".
-# You can change the intensity in runtime with "+" and "-" keys and check current statistics with "s" key.
-# For example, by default (-dcri 30) 390 card shows 29MH/s for Ethereum and 440MH/s for Decred. Setting -dcri 70 causes 24MH/s for Ethereum and 850MH/s for Decred.
-# Default is for temp target 75C and temp stop 90C.
-
-#WARNING: be careful if you use use separate overclock/temperature settings for every card, due to new # sorting method GPUs can get different indexes!
-
 # -mode 0 = dual mining
 # -mode 1 = eth only
-# -dcri option tunes single/dual rate. For example mode 1 and -dcri 7 gives a nice ETH hashrate.
-# To choose what coin you want use the -dcoin parameter.
-# TO CONTROL FANS USING THE OS / OC script, remove the tt and tshop params here! They override it.
-FLAGS=-tt 75 -tstop 90 -mode 1
 
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised 

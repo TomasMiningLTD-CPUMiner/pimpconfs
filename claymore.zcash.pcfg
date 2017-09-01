@@ -30,24 +30,79 @@ NAME=Claymore Zcash
 # ALGO1 Needs to be Equihash.
 ALGO1=Equihash
 
-# ZCASH POOL INFORMATION: Put your EQUIHASH pool and wallet here.
-# POOL1 is in form stratum+tcp://url:port
-# USER1 is the username usually in form wallet.workername
-# PASS1 is usually x but can be used for parameters.
-POOL1=eu1-zcash.flypool.org:3333
-USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.pimp
-PASS1=x
+# POOLS:
+# ---------------------------------------------------------------------
+# ZEC Mine-to-wallet pools:
+# These pools allow you to mine to direct wallet address.
+# Either put a ZEC wallet (starts with t), nicehash takes a BTC wallet,
+# Then put a dot and then your worker name if you like. 
+#
+# flypool SSL/TLS connection:   
+  POOL1=ssl://eu1-zcash.flypool.org:3443
+  USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.PimpWorker 
+  PASS1=x
+#
+# flypool (unencrypted connection): 
+#   POOL1=eu1-zcash.flypool.org:3333 
+#   USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.YourWorkerName
+#   PASS1=x
+#
+# nanopool (unencrypted connection): 
+#   POOL1=zec-eu1.nanopool.org:6666 
+#   USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.YourWorkerName
+#   PASS1=x
+#
+# nicehash (unencrypted connection): 
+#   POOL1=equihash.usa.nicehash.com:3357 
+#   USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir
+#   PASS1=x
+#
+# ---------------------------------------------------------------------
+# ZEC Mine-to-worker pools:
+# These pools require you to create an account and a worker to mine to:
+#
+# suprnova SSL/TLS connection:
+#   POOL1=ssl://zec.suprnova.cc:2242 
+#   USER1=YourLogin.YourWorkerName
+#   PASS1=YourWorkerPassword
+#
+# miningpoolhub SSL/TLS connection (auto-detects, same port for unencrypted connection):
+#   POOL1=ssl://us-east.equihash-hub.miningpoolhub.com:20570
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# coinmine SSL/TLS connection:
+#   POOL1=ssl://zec.coinmine.pl:7017
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# miningpoolhub (unencrypted connection)
+#   POOL1=us-east.equihash-hub.miningpoolhub.com:20570 
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# suprnova (unencrypted connection):
+#   POOL1=zec.suprnova.cc:2142 
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# coinmine (unencrypted connection):
+#   POOL1=zec-us.coinmine.pl:7007 
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+# 
+# coinmine (unencrypted connection):
+#   POOL1=us-east01.miningrigrentals.com
+#   USER1=pimp.34579
+#   PASS1=x
+# ---------------------------------------------------------------------
 
-# OR, to use Nicehash, put your BITCOIN address dot workername here,
-# then comment out the section above and uncomment this section.
-# Note: Using Nicehash SSL port reduces Claymore dev fee.
-#POOL1=stratum+ssl://equihash.eu.nicehash.com:33357
-#USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
-#PASS1=x
-
+# COMMAND LINE PARAMETERS:
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
 # Default is for temp target 75C and temp stop 90C.
+# IF YOU WANT TO MANAGE FANS WITH gputool YOU MUST REMOVE -tt 75 -tstop 90
+#  Reason: Claymore will override gputool. But we didn't want to lose the failsafe defaults.
 FLAGS=-tt 75 -tstop 90
 
 # ==================================================================

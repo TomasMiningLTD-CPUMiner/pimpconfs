@@ -28,25 +28,72 @@
 NAME=Optiminer Zcash
 # ALGO1 Needs to be Equihash.
 ALGO1=Equihash
+
+# POOLS:
+# ---------------------------------------------------------------------
+# ZEC Mine-to-wallet pools:
+# These pools allow you to mine to direct wallet address.
+# Either put a ZEC wallet (starts with t), nicehash takes a BTC wallet,
+# Then put a dot and then your worker name if you like. 
 #
-# EQUIHASH POOL INFORMATION: Put your EQUIHASH pool and BTC wallet here.
-# POOL1 is in form stratum+tcp://url:port
-# USER1 is the username usually in form wallet.workername MAKE SURE IT IS A ZEC T-ADDRESS!
-# PASS1 is usually x but can be used for parameters.
-POOL1=eu1-zcash.flypool.org:3333
-USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.pimp
-PASS1=x
+# flypool (unencrypted connection): 
+   POOL1=eu1-zcash.flypool.org:3333 
+   USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.YourWorkerName
+   PASS1=x
+#
+# nanopool (unencrypted connection): 
+#   POOL1=zec-eu1.nanopool.org:6666 
+#   USER1=t1RhRUVnfomxUWiPjhjADkmGuoBtQSq75Zy.YourWorkerName
+#   PASS1=x
+#
+# nicehash (unencrypted connection): 
+#   POOL1=equihash.usa.nicehash.com:3357 
+#   USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir
+#   PASS1=x
+#
+# ---------------------------------------------------------------------
+# ZEC Mine-to-worker pools:
+# These pools require you to create an account and a worker to mine to:
+#
+# miningpoolhub (unencrypted connection)
+#   POOL1=us-east.equihash-hub.miningpoolhub.com:20570 
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# suprnova (unencrypted connection):
+#   POOL1=zec.suprnova.cc:2142 
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+#
+# coinmine (unencrypted connection):
+#   POOL1=zec-us.coinmine.pl:7007 
+#   USER1=YourLogin.YourWorkerName 
+#   PASS1=YourWorkerPassword
+# 
+# coinmine (unencrypted connection):
+#   POOL1=us-east01.miningrigrentals.com
+#   USER1=pimp.34579
+#   PASS1=x
+# ---------------------------------------------------------------------
 
-# OR, Comment the above out with #, and use Nicehash example:
-# Note: Nicehash uses bitcoin address dot workername as user!
-#POOL1=equihash.usa.nicehash.com:3357
-#USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
-#PASS1=x
 
-
+# COMMAND LINE OPTIONS:
+# [--benchmark <seconds>] [--list-devices] [--force-generic-kernel] [--experimental-kernel] 
+# [--nodevfee] [-i <number>] ...  [-m <port>] [--watchdog-cmd <command>] 
+# [--watchdog-timeout <seconds>] [--max-log-files <count>] [--max-log-file-size <bytes>] 
+# [-l <filename>] [-v] [-p <string>] [-u <string>] [-s <host:port>] [-d <integer>] ...  [-c <integer>] 
+#
+# For more details, read Optiminer Command line Documentation: 
+# https://github.com/Optiminer/OptiminerZcash/blob/master/cmd.md
+#
+#   -i <number>,  --intensity <number>  (accepted multiple times)
+#     Worker intensity. 0 means auto-detect based on available memory.
+#     Higher values use more GPU memory. Can be specified once applying the
+#     same intensity to all devices or once per device (same order as -d).
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
-FLAGS=
+
+FLAGS=--nodevfee
 
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised 
