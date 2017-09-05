@@ -26,17 +26,44 @@
 # NAME = This is the way the miner will appear in miner farm
 NAME=Claymore Dual
 
-# POOLS:
+# PRIMARY/ETH/ETC POOLS:
 # ---------------------------------------------------------------------
 # ETH POOL INFORMATION: Put your ETH pool and wallet here.
 # POOL1 is in form stratum+tcp://url:port
 # USER1 is the username usually in form wallet.workername
 # PASS1 is usually x but can be used for parameters.
 # ALGO1 Needs to be Ethereum.
-POOL1=stratum+tcp://us1.ethermine.org:4444
-USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa
-PASS1=x
-ALGO1=Ethereum
+
+# ETH Ethermine (USER1 is ETH wallet dot workername)
+  POOL1=stratum+tcp://us1.ethermine.org:4444
+  USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa.PimpWorker
+  PASS1=x
+  ALGO1=Ethereum
+
+# ETH Nicehash (USER1 is BTC wallet dot worker) (Need FLAGS= -esm 3)
+#  POOL1=stratum+tcp://daggerhashimoto.usa.nicehash.com:3353
+#  USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.PimpWorker
+#  PASS1=x
+#  ALGO1=Ethereum
+
+# ETH Ethpool (USER1 is ETH wallet dot workername)
+#  POOL1=stratum+tcp://us1.ethpool.org:3333
+#  USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa.PimpWorker
+#  PASS1=x
+#  ALGO1=Ethereum
+
+# ETH Nanopool (USER1 is ETH wallet dot workername)
+#  POOL1=stratum+tcp://eth-us-east1.nanopool.org:9999
+#  USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa.PimpWorker
+#  PASS1=x
+#  ALGO1=Ethereum
+
+# ETH MiningRigRentals (Make an account, USER1 is Username dot rignumber)
+#  POOL1=stratum+tcp://us-east01.miningrigrentals.com:3333
+#  USER1=pimp.32526
+#  PASS1=x
+#  ALGO1=Ethereum
+
 
 # DUAL MINING CONFIG: Not enabled by default. 
 # ---------------------------------------------------------------------
@@ -86,7 +113,8 @@ ALGO1=Ethereum
 # IF YOU WANT TO MANAGE FANS WITH gputool YOU MUST REMOVE -tt 75 -tstop 90
 #  Reason: Claymore will override gputool. But we didn't want to lose the failsafe defaults.
 
-FLAGS=-tt 75 -tstop 90 -nofee 1
+FLAGS=-allpools 1 -tt 75 -tstop 90
+
 
 # For all options read Claymore dual documentation: 
 #  https://bitcointalk.org/index.php?topic=1433925.0
