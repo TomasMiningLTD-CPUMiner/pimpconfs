@@ -28,7 +28,6 @@ NAME=Monero XMR CPU
 # ALGO1 Needs to be Cryptonight.
 ALGO1=Cryptonight
 
-
 # CRYPTONIGHT POOL INFORMATION: Put your XMR pool / wallet info here.
 # ---------------------------------------------------------------------
 # POOL1 is in form stratum+tcp://url:port
