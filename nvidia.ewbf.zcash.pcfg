@@ -93,7 +93,7 @@ ALGO1=Equihash
 # IF YOU WANT TO MANAGE FANS WITH gputool YOU MUST REMOVE --templimit
 #  Reason: EWBF will override gputool. But we didn't want to lose the failsafe defaults.
 
-FLAGS=--port 3333 --eexit 1 --log 2 --fee 0 --templimit 90 --tempunits C --pec
+FLAGS=--port 3333 --eexit 1 --fee 0 --templimit 90 --tempunits C --pec
 
 
 # Here is the CLI --help information provided by the miner's author:
