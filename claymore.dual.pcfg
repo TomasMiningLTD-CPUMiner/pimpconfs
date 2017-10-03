@@ -26,19 +26,18 @@
 # NAME = This is the way the miner will appear in miner farm
 NAME=Claymore Dual
 
-# PRIMARY/ETH/ETC POOLS:
+# PRIMARY/ETH/ETC/UBQ POOLS:
 # ---------------------------------------------------------------------
-# ETH POOL INFORMATION: Put your ETH pool and wallet here.
+# PRIMARY POOL INFORMATION: Put your ETHASH pool and wallet here.
 # POOL1 is in form stratum+tcp://url:port
 # USER1 is the username usually in form wallet.workername
 # PASS1 is usually x but can be used for parameters.
-# ALGO1 Needs to be Ethereum.
 
 # ETH Ethermine (USER1 is ETH wallet dot workername)
-  POOL1=stratum+tcp://us1.ethermine.org:4444
-  USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa.PimpWorker
-  PASS1=x
-  ALGO1=Ethereum
+#  POOL1=stratum+tcp://us1.ethermine.org:4444
+#  USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa.PimpWorker
+#  PASS1=x
+#  ALGO1=Ethereum
 
 # ETH Nicehash (USER1 is BTC wallet dot worker) (Need FLAGS= -esm 3)
 #  POOL1=stratum+tcp://daggerhashimoto.usa.nicehash.com:3353
@@ -63,6 +62,22 @@ NAME=Claymore Dual
 #  USER1=pimp.32526
 #  PASS1=x
 #  ALGO1=Ethereum
+
+
+## Note: These are UBQ pools not ETH and they requre a UBQ address as USER1.
+
+# UBQ Minertopia (USER1 is UBQ wallet dot workername) (requires -allpools 1 in the FLAGS below)
+#  POOL1=stratum+tcp://ubq.minertopia.org:8008
+#  USER1=0x6637ad6077ba88c14e8d9ed716305ba02f4cfe78
+#  PASS1=x
+#  ALGO1=Ubiq(Ethash)
+
+# UBQ Ubiqpool (USER1 is UBQ wallet dot workername) (requires -allpools 1 in the FLAGS below)
+#  POOL1=stratum+tcp://us.ubiqpool.io:8008
+#  USER1=0x6637ad6077ba88c14e8d9ed716305ba02f4cfe78
+#  PASS1=x
+#  ALGO1=Ubiq(Ethash)
+
 
 
 # DUAL MINING CONFIG: Not enabled by default. 
@@ -113,7 +128,7 @@ NAME=Claymore Dual
 # IF YOU WANT TO MANAGE FANS WITH gputool YOU MUST REMOVE -tt 75 -tstop 90
 #  Reason: Claymore will override gputool. But we didn't want to lose the failsafe defaults.
 
-FLAGS=-allpools 1 -tt 75 -tstop 90
+FLAGS=-allpools 1 -eworker Pimpworker -tt 75 -tstop 90
 
 
 # For all options read Claymore dual documentation: 
