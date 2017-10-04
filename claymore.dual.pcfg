@@ -34,10 +34,10 @@ NAME=Claymore Dual
 # PASS1 is usually x but can be used for parameters.
 
 # ETH Ethermine (USER1 is ETH wallet dot workername)
-#  POOL1=stratum+tcp://us1.ethermine.org:4444
-#  USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa.PimpWorker
-#  PASS1=x
-#  ALGO1=Ethereum
+  POOL1=stratum+tcp://us1.ethermine.org:4444
+  USER1=0x6d156c89f75405b2877be9092e006dca55a12cfa.PimpWorker
+  PASS1=x
+  ALGO1=Ethereum
 
 # ETH Nicehash (USER1 is BTC wallet dot worker) (Need FLAGS= -esm 3)
 #  POOL1=stratum+tcp://daggerhashimoto.usa.nicehash.com:3353
