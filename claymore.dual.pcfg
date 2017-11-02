@@ -66,13 +66,13 @@ NAME=Claymore Dual
 
 ## Note: These are UBQ pools not ETH and they requre a UBQ address as USER1.
 
-# UBQ Minertopia (USER1 is UBQ wallet dot workername) (requires -allpools 1 in the FLAGS below)
+# UBQ Minertopia (USER1 is UBQ wallet only) (requires -allpools 1 in the FLAGS below)
 #  POOL1=stratum+tcp://ubq.minertopia.org:8008
 #  USER1=0x6637ad6077ba88c14e8d9ed716305ba02f4cfe78
 #  PASS1=x
 #  ALGO1=Ubiq(Ethash)
 
-# UBQ Ubiqpool (USER1 is UBQ wallet dot workername) (requires -allpools 1 in the FLAGS below)
+# UBQ Ubiqpool (USER1 is UBQ wallet only) (requires -allpools 1 in the FLAGS below)
 #  POOL1=stratum+tcp://us.ubiqpool.io:8008
 #  USER1=0x6637ad6077ba88c14e8d9ed716305ba02f4cfe78
 #  PASS1=x
