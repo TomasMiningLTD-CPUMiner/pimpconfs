@@ -25,18 +25,8 @@
 # ==================================================================
 # NAME = This is the way the miner will appear in miner farm
 NAME=CCMiner Multi Cryptonight
+ALGO1=Cryptonight
 #
-# POOL INFORMATION: Put your pool and wallet here.
-# POOL1 is in form stratum+tcp://url:port
-# USER1 is the username usually in form wallet.workername DEFAULT MoneroPool TAKES A XMR WALLET!
-# NOTE: SOME EXCHANGES CANNOT BE MINED TO, like Bittrex.
-# PASS1 is usually x but can be used for parameters.
-# ALGO1 is the algorithm 
-POOL1=stratum+tcp://mine.moneropool.com:3333
-USER1=4AkxPmLWKtyQ7hagDJ3CMRevKUvtDpe8XcABaJRYfXvLHCWFtyChdxhMNXuhEpp6aPXgg7AEpFSRCEAHqNhkBuP66qqVNP1
-PASS1=x
-ALGO1=cryptonight
-
 
 # CRYPTONIGHT POOL INFORMATION: Put your XMR pool / wallet info here.
 # ---------------------------------------------------------------------
