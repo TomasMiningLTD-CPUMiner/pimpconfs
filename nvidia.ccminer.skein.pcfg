@@ -40,8 +40,8 @@ ALGO1=skein
 
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
-# We suggest leaving --api-remote in so you can control your miner and monitor it.
-FLAGS=--api-remote
+
+FLAGS=
 
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised
@@ -49,5 +49,4 @@ TYPE=GPU
 DIR=ccminer
 BINARY=ccminer
 CONF=p1:o,u1:u,l1:p,a1:a
-API=b
-FLAGS=--api-remote
+API=-api-remote -b

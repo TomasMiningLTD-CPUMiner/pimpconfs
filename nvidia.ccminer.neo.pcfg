@@ -16,7 +16,7 @@
 # ==================================================================
 # Profile Description:
 # 
-# Mine LBRY using NVIDIA
+# Mine NEOSCRYPT using NVIDIA
 #
 # DISCLAIMER: MINING IS DANGEROUS!!!
 # PLEASE TAKE PRECAUTIONS AND TEST THOROUGHLY 
@@ -28,14 +28,14 @@ NAME=CCMiner
 #
 # POOL INFORMATION: Put your pool and wallet here.
 # POOL1 is in form stratum+tcp://url:port
-# USER1 is the username usually in form wallet.workername DEFAULT Suprnova Requires an account to be setup!!
+# USER1 is the username usually in form wallet.workername DEFAULT Nicehash Requires a BTC wallet as the username!!!
 # NOTE: SOME EXCHANGES CANNOT BE MINED TO, like Bittrex.
 # PASS1 is usually x but can be used for parameters.
 # ALGO1 is the algorithm 
-POOL1=stratum+tcp://lbry.usa.nicehash.com:3356
+POOL1=stratum+tcp://neoscrypt.usa.nicehash.com:3341
 USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
 PASS1=x
-ALGO1=lbry
+ALGO1=neoscrypt
 
 
 # Here is where you can add command line parameters such as intensity and mining modes.
