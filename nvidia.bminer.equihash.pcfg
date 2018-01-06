@@ -16,7 +16,7 @@
 # ==================================================================
 # Profile Description:
 # 
-# Mine DASH using NVIDIA
+# Mine EQUIHASH using NVIDIA with BMINER
 #
 # DISCLAIMER: MINING IS DANGEROUS!!!
 # PLEASE TAKE PRECAUTIONS AND TEST THOROUGHLY 
@@ -24,19 +24,29 @@
 # PIMP ASSUMES NO LIABILITY FOR ANY DAMAGES CAUSED BY MINING.
 # ==================================================================
 # NAME = This is the way the miner will appear in miner farm
-NAME=CCMiner
+NAME=BMiner
+ALGO1=Equihash
 #
 # POOL INFORMATION: Put your pool and wallet here.
-# POOL1 is in form stratum+tcp://url:port
-# USER1 is the username usually in form wallet.workername DEFAULT Suprnova Requires an account to be setup!!
+# USER1 is in form stratum+tcp://wallet.worker@url:port
+# THERE IS NO POOL1 IT IS PART OF THE USER1 FIELD FOR THIS MINER.
 # NOTE: SOME EXCHANGES CANNOT BE MINED TO, like Bittrex.
 # PASS1 is usually x but can be used for parameters.
 # ALGO1 is the algorithm 
-POOL1=stratum+tcp://dash.suprnova.cc:9995
-USER1=pimp.dash
-PASS1=x
-ALGO1=x11
 
+# Mining ZEN @ Luckpool (USER1 is ZEN wallet z-address dot worker)
+# USER1=stratum://znchoic2LycPXqAAhLeBektAgRUCezzchtB@luckpool.org:3058
+
+# Mining Zcash on nanopool
+USER1=stratum://t1ZBtpkUy1y1deYsNJnzdW4tk7HiJEcfUzr.worker@zec-eu1.nanopool.org:6666
+
+# Mining Bitcoin Gold (BTG) on suprnova
+# This will mine towards the account foo which has the password pwd.
+# USER1=stratum://foo.worker:pwd@btg.suprnova.cc:8816
+
+# Mining Zcash over SSL connections
+# To connect to the mining pool over SSL, you can use stratum+ssl:// instead of stratum:// in the URI.
+# USER1=stratum+ssl://t1ZBtpkUy1y1deYsNJnzdW4tk7HiJEcfUzr.worker@zec-eu1.nanopool.org:6633
 
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
@@ -46,7 +56,7 @@ FLAGS=
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised
 TYPE=GPU
-DIR=ccminer
-BINARY=ccminer
-CONF=p1:o,u1:u,l1:p,a1:a
-API=-api-remote -b
+DIR=bminer
+BINARY=bminer
+CONF=u1:uri
+API=-api 127.0.0.1:
