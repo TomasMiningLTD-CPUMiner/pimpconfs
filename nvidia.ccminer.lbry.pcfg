@@ -7,7 +7,7 @@
 #|__|            \/|__|           https://getPiMP.org
 #
 #
-# Copyright (c) 2017 getPiMP.org.  All Rights Reserved.
+# Copyright (c) 2018 getPiMP.org.  All Rights Reserved.
 # License: This code is licensed for use with getPiMP.org only.
 # Description: PIMP CLI miner module config file.
 # A .pcfg is a specially formatted PIMP Config mining profile.
@@ -32,11 +32,27 @@ NAME=CCMiner
 # NOTE: SOME EXCHANGES CANNOT BE MINED TO, like Bittrex.
 # PASS1 is usually x but can be used for parameters.
 # ALGO1 is the algorithm 
-POOL1=stratum+tcp://lbry.usa.nicehash.com:3356
-USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimp
-PASS1=x
 ALGO1=lbry
 
+# Nicehash Example pays out to BTC wallet
+POOL1=stratum+tcp://lbry.usa.nicehash.com:3356
+USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimpworker
+PASS1=x
+
+# Lbrycrd MiningRigRentals
+#  POOL1=http://us-east01.miningrigrentals.com:3333
+#  USER1=pimp.32506
+#  PASS1=x
+
+# Zpool example with Payout to BTC
+#  POOL1=stratum+tcp://lbry.mine.zpool.ca:3334
+#  USER1=1JiPutZrDBLW4YwXY5GbwgLJrpAQTMUUir.pimpworker
+#  PASS1=c=btc
+
+# Lbrypool example with Payout to LBRY wallet
+#  POOL1=stratum+tcp://lbrypool.com:3334
+#  USER1=YourLbryWallet.Workername
+#  PASS1=x
 
 # Here is where you can add command line parameters such as intensity and mining modes.
 # NOTE: the pool/wallet/algo settings are set by PIMP. Set those above.
