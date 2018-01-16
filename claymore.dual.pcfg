@@ -63,7 +63,6 @@ NAME=Claymore Dual
 #  PASS1=x
 #  ALGO1=Ethereum
 
-
 ## Note: These are UBQ pools not ETH and they requre a UBQ address as USER1.
 
 # UBQ Minertopia (USER1 is UBQ wallet only) (requires -allpools 1 in the FLAGS below)
@@ -77,8 +76,6 @@ NAME=Claymore Dual
 #  USER1=0x6637ad6077ba88c14e8d9ed716305ba02f4cfe78
 #  PASS1=x
 #  ALGO1=Ubiq(Ethash)
-
-
 
 # DUAL MINING CONFIG: Not enabled by default. 
 # ---------------------------------------------------------------------
@@ -127,6 +124,8 @@ NAME=Claymore Dual
 # Default is for temp target 75C and temp stop 90C.
 # IF YOU WANT TO MANAGE FANS WITH gputool YOU MUST REMOVE -tt 75 -tstop 90
 #  Reason: Claymore will override gputool. But we didn't want to lose the failsafe defaults.
+# In this miner, worker name is defined in FLAGS, not as part of the USER1. 
+# Pimpworker can be changed to your own worker name of your choice.
 
 FLAGS=-allpools 1 -eworker Pimpworker -tt 75 -tstop 90
 
@@ -139,6 +138,9 @@ FLAGS=-allpools 1 -eworker Pimpworker -tt 75 -tstop 90
 # You can also specify values for every card, for example "-dcri 30,100,50".
 # -mode 0 = dual mining
 # -mode 1 = eth only
+# -gser this setting can improve stability on multi-GPU systems if miner hangs during startup. It 
+# serializes GPUs initalization routines. Use -gser 1 to serailize some of routines and -gser 2 to 
+# serialize all routines. Default value is 0 (no serialization, fast initialization).
 
 # ==================================================================
 # INTERNAL USE ONLY: modification below here is unadvised 
